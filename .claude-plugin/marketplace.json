@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-marketplace.json",
+  "name": "claude-library",
+  "owner": {
+    "name": "Davis Ansons",
+    "email": "davis.ansons@outlook.com"
+  },
+  "metadata": {
+    "pluginRoot": "./plugins"
+  },
+  "plugins": [
+    {
+      "name": "summarise-topic",
+      "source": "summarise-topic",
+      "description": "Makes Claude follow a consistent structure when summarising a technical topic.",
+      "category": "productivity",
+      "tags": ["skill", "summarisation", "writing"]
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "name": "summarise-topic",
+  "description": "Makes Claude follow a consistent structure when summarising a technical topic.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Davis Ansons",
+    "email": "davis.ansons@outlook.com"
+  }
+}
