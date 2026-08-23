@@ -5,13 +5,10 @@
     "name": "Davis Ansons",
     "email": "davis.ansons@outlook.com"
   },
-  "metadata": {
-    "pluginRoot": "./plugins"
-  },
   "plugins": [
     {
       "name": "summarise-topic",
-      "source": "summarise-topic",
+      "source": "./plugins/summarise-topic",
       "description": "Makes Claude follow a consistent structure when summarising a technical topic.",
       "category": "productivity",
       "tags": ["skill", "summarisation", "writing"]
