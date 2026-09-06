@@ -1,0 +1,9 @@
+{
+  "name": "case-study",
+  "description": "Builds a work project case study through an interview loop, filling a fixed template with ratings, CV bullet points, a STAR interview story with sample Q&A, and tags.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Davis Ansons",
+    "email": "davis.ansons@outlook.com"
+  }
+}

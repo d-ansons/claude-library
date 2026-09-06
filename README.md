@@ -24,6 +24,7 @@ Each plugin lives in its own directory under `plugins/` and is self-contained. T
 | Plugin | Description |
 | --- | --- |
 | [summarise-topic](plugins/summarise-topic) | Makes Claude always return the same structure when summarising a technical topic. |
+| [case-study](plugins/case-study) | Builds a work project case study through an interview loop, filling a fixed template with ratings, CV bullet points, a STAR interview story with sample Q&A, and tags. |
 
 ## Using this marketplace locally
 
