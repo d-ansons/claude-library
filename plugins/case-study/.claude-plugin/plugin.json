@@ -1,7 +1,7 @@
 {
   "name": "case-study",
   "description": "Builds a work project case study through an interview loop that drafts and updates a file live, probes for tool-specific depth, and fills a career timeline, ratings, CV bullet points, a STAR interview story with sample Q&A, and tags.",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "author": {
     "name": "Davis Ansons",
     "email": "davis.ansons@outlook.com"
