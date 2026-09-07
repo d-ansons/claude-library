@@ -1,6 +1,6 @@
 # Output template
 
-Fill this structure exactly once the completeness checklist in SKILL.md is satisfied. `Tags` must include the type (`delivery` or `achievement`). `Parent Engagement` and `Related Case Studies` are omitted entirely (not left as empty placeholders) when the entry is standalone. `Interview Questions & Sample Answers` shows two Q&A pairs below but holds 2-4 — add or drop pairs to match how many genuinely fit, per SKILL.md.
+Fill this structure exactly, per the drafting process in SKILL.md: write it on the first round with `*(pending)*` for anything not yet known, then update it in place each round. `Tags` must include the type (`delivery` or `achievement`). `Parent Engagement` and `Related Case Studies` are omitted entirely (not left as empty placeholders) when the entry is standalone. `Interview Questions & Sample Answers` shows two Q&A pairs below but holds 2-4 — add or drop pairs to match how many genuinely fit, per SKILL.md. By the finished file, no `*(pending)*` should remain — unanswered items become "Not specified" instead.
 
 ```markdown
 # <Project Name>
@@ -9,9 +9,13 @@ Fill this structure exactly once the completeness checklist in SKILL.md is satis
 **Parent Engagement:** <engagement/program name, or omit this line if standalone>
 **Related Case Studies:** <relative links to other case studies under the same engagement, or omit this line if none>
 
+## Timeline
+- **Dates:** <Month YYYY> – <Month YYYY, or "Ongoing">
+- **Role at the time:** <job title @ employer>
+- **Sequence note:** <where this sits relative to other career milestones, or omit this line if not stated>
+
 ## Context
 - **Role / team / company:** <role, team, company, or "Personal project">
-- **Timeframe:** <when / how long>
 
 <1-2 sentences on the problem or goal this project addressed>
 

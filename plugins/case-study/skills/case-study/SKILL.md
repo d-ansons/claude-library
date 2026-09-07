@@ -1,10 +1,10 @@
 ---
-description: Turn rough notes about a work project or achievement (e.g. a delivered project, or a non-delivery win like selling follow-on work to a client) into a structured case study (context, outcome, an experience-value rating out of 10, key skills, CV bullet points each rated for CV relevance out of 10, a STAR-format interview story plus sample answers to likely interview questions, domain tags, and things to learn) via an interview loop that asks targeted follow-up questions until the picture is solid enough to write. Links related case studies under the same ongoing client engagement, and screens for confidential/sensitive details before finalizing. Use when the user wants to document a past project, an achievement like winning or expanding client work, build a case study entry, write up a project retrospective for a portfolio/CV repo, prep interview answers from past work, or says things like "let's write up this project" or "add a case study for X".
+description: Turn rough notes about a work project or achievement (e.g. a delivered project, or a non-delivery win like selling follow-on work to a client) into a structured case study (timeline placing it in the user's career, context, outcome, an experience-value rating out of 10, key skills, CV bullet points each rated for CV relevance out of 10, a STAR-format interview story plus sample answers to likely interview questions, domain tags, and things to learn) via an interview loop that writes a draft file immediately and updates it after every round of targeted follow-up questions until the picture is solid. Probes for depth by asking about tool-specific decisions the user likely made but didn't mention (e.g. Import vs. DirectQuery for a Power BI report). Links related case studies under the same ongoing client engagement, and screens for confidential/sensitive details before finalizing. Use when the user wants to document a past project, an achievement like winning or expanding client work, build a case study entry, write up a project retrospective for a portfolio/CV repo, prep interview answers from past work, or says things like "let's write up this project" or "add a case study for X".
 ---
 
 # Case Study Builder
 
-Build one case study per invocation by looping between the user's notes and targeted questions, then filling [template.md](template.md) exactly. Never produce the final write-up from a single round of notes — always run at least one question round first, even if the notes look detailed.
+Build one case study per invocation by looping between the user's notes and targeted questions — writing a real draft file after the first round and updating it after every subsequent round, per Drafting As You Go below. The file should always reflect the current state of the conversation; never hold everything in your head and produce a single big write-up only at the end.
 
 ## Procedure
 
@@ -14,15 +14,27 @@ Build one case study per invocation by looping between the user's notes and targ
 
 3. **Check notes against the completeness checklist** for that type (below). Anything missing or vague is a gap.
 
-4. **Ask about gaps in one batched message**, not one question at a time. Group related questions together, be concrete about what's missing, and reference specifics the user already gave you rather than asking generically ("What was the impact?" is weak; "You mentioned the migration cut deploy time — do you have a rough before/after number, even approximate?" is strong). Include the parent-engagement question (below) in this same first round.
+4. **Write the draft file now**, before asking anything, per Drafting As You Go below — filled with whatever is already known, clearly marked placeholders for the rest. Tell the user the file path.
 
-5. **Repeat.** After each answer, re-check the checklist. Keep looping until every checklist item is either filled or explicitly marked as not applicable/not known by the user. Most case studies converge in 2-4 rounds — if you're still asking after that, you're probably over-interrogating; ask what's left in one final pass and move on with "not specified" for anything still missing.
+5. **Ask about gaps in one batched message**, not one question at a time. Group related questions together, be concrete about what's missing, and reference specifics the user already gave you rather than asking generically ("What was the impact?" is weak; "You mentioned the migration cut deploy time — do you have a rough before/after number, even approximate?" is strong). Include the parent-engagement, timeline, and depth-probing questions (below) in this same first round.
 
-6. **Never fabricate.** Do not invent metrics, outcomes, tools, team sizes, or timeframes the user hasn't stated. If something is missing after being asked, write "Not specified" in the template rather than guessing a plausible-sounding number or detail.
+6. **Update the draft file with the new answers**, then re-check the checklist for what's still missing. Keep looping — ask, update the file, re-check — until every checklist item is either filled or explicitly marked as not applicable/not known by the user. Most case studies converge in 2-4 rounds — if you're still asking after that, you're probably over-interrogating; ask what's left in one final pass and move on with "Not specified" for anything still missing.
 
-7. **Before writing, do one final check** covering sensitivity and tags together (see Confidentiality Screening and Tags below) — bundle both into the same message so this doesn't add an extra round on its own.
+7. **Never fabricate.** Do not invent metrics, outcomes, tools, team sizes, or timeframes the user hasn't stated. If something is missing after being asked, write "Not specified" in the file rather than guessing a plausible-sounding number or detail.
 
-8. **Write the case study** using [template.md](template.md), filling every section. Apply the rating rubrics, CV bullet rules, and STAR guidance below.
+8. **Before finishing, do one final check** covering sensitivity and tags together (see Confidentiality Screening and Tags below) — bundle both into the same message so this doesn't add an extra round on its own.
+
+9. **Complete the draft** — fill in the rating, CV bullets, STAR story, and interview Q&A (which need the full picture to be worth generating), replace any remaining placeholders with "Not specified", and update the file one last time. Apply the rating rubrics, CV bullet rules, and STAR guidance below.
+
+## Drafting as you go
+
+The case study lives in a real file from the first round onward, not just in conversation — the user should be able to watch it fill in and can hand-edit it between rounds.
+
+- **Where to save it**: if the current directory (or a parent-engagement match you found) shows an existing case-studies location or naming convention, follow it. Otherwise create `<slug-of-project-name>.md` in the current directory and tell the user the path so they can redirect you if it's wrong.
+- **First write**: use [template.md](template.md)'s structure, filling every field you already know from the initial notes. For anything you don't know yet, write the literal placeholder `*(pending)*` — don't guess and don't leave the section heading empty.
+- **Every round after that**: re-read the file first — the user may have edited it directly — then use Edit to update only the sections affected by the new answers. Don't regenerate the whole file from scratch each round; that discards anything the user hand-edited.
+- **Generated sections** (Experience Value, CV Bullet Points, Key Skills, Interview Story, Interview Questions & Sample Answers) stay `*(pending)*` until step 9, since they need the full picture to be worth writing — don't half-generate them early and then rewrite them later.
+- **Finishing**: by the end, no `*(pending)*` markers should remain — anything genuinely never answered becomes "Not specified" instead.
 
 ## Case study types
 
@@ -37,7 +49,8 @@ The template shape is the same for both — Achievement entries just treat **Too
 
 A case study is ready to write once you can answer all of these from the conversation. Items marked (Delivery only) or (Achievement only) apply just to that type — everything else applies to both.
 
-- **Context**: what was the project/achievement, what was the user's role, roughly when/how long, and for what team or company (or "personal project" if not work-affiliated).
+- **Context**: what was the project/achievement, what was the user's role, and for what team or company (or "personal project" if not work-affiliated).
+- **Timeline**: concrete dates and where this sits in the user's career — see Timeline below.
 - **Parent engagement**: is this part of a larger ongoing client engagement or program that already has (or will have) other separate case studies, or is it standalone? See Parent Engagement & Related Case Studies below — don't assume linkage just because the client matches; confirm it.
 - **Problem/goal**: what was the project trying to achieve or what problem did it solve. (Delivery only)
 - **Actions**: what did the user actually do — decisions made, approach taken, not just "worked on X." (Delivery only)
@@ -45,6 +58,31 @@ A case study is ready to write once you can answer all of these from the convers
 - **How it happened** (Achievement only): what the user specifically did to produce the win — the pitch, the relationship groundwork, the timing.
 - **Outcome**: what happened as a result — ideally a number or concrete change (revenue/scope for an Achievement), but a qualitative outcome is acceptable if the user has no metric.
 - **Challenges**: at least one non-trivial obstacle and how it was handled. This is usually the richest source of skills and CV material — dig for it if the notes don't mention one. (Optional for Achievement entries if none applies.)
+- **Depth**: for every specific tool/technology named, at least one likely-but-unmentioned decision or detail has been asked about — see Probing for Depth below. (Delivery only)
+
+## Probing for depth
+
+Users routinely under-report what they actually did because the details felt too routine to mention. For every specific tool, technology, or methodology named in the notes, think like a practitioner of that tool: what decision or sub-task does anyone using it in this way almost certainly have to handle? Ask about that directly, by name, instead of a generic "tell me more" — naming the specific thing signals you understand the tool and makes it easy for the user to answer in one line.
+
+Examples of the pattern (not a fixed list — apply the same reasoning to whatever's actually named):
+- "Power BI report" → ask whether it used Import or DirectQuery mode, and whether there was any real data modeling/DAX involved.
+- "Deployed on Kubernetes" → ask about how they handled resource requests/limits, ingress/service exposure, or secrets/config.
+- "Led a migration/cutover" → ask what the rollback plan or fallback strategy was.
+- "Built a data pipeline" → ask about the orchestration/scheduling approach and how failures or retries were handled.
+
+Guardrails:
+- Ask about a decision only when the way they described using the tool makes it genuinely likely they encountered it — don't interrogate every possible feature of a tool.
+- Fold these into the same batched question round as everything else (see the main procedure) — this is not a separate round.
+- Cap it: 1-2 depth questions per tool actually named that seems likely to reveal something CV/skill-worthy, prioritizing the tool(s) most central to the project.
+- If the user says "I don't remember" or "that wasn't something I decided," drop it — this is meant to surface real depth, not test their memory.
+
+## Timeline
+
+Each case study should be placeable on a single lineage across the user's whole career, so ask for calendar precision here even though you'd accept looser answers elsewhere.
+
+- **Dates**: get at least month/year for when the project started and ended (or "Ongoing"). "A few months ago" or "last year" isn't enough — push once for the actual month/year, but accept an approximate one ("early 2023, not sure of the exact month") rather than blocking on it.
+- **Role at the time**: the job title and employer the user held when this happened — this may repeat what's in Context, that's fine, Timeline needs to stand on its own.
+- **Sequence note** (optional but valuable): how this fits relative to other career milestones the user mentions — e.g. "6 months into this role, 2 months before promotion to Senior," or "second project in the Acme engagement, after the platform migration." Only include this if the user actually says something placing it in sequence; don't invent a position.
 
 ## Parent engagement & related case studies
 
@@ -118,3 +156,5 @@ This section shows the versatility of one piece of experience — the same story
 - Run the confidentiality screening before writing the STAR story, sample interview answers, and CV bullets too, not just the main body — a sanitized Outcome section paired with unsanitized answers elsewhere defeats the point.
 - An Achievement entry still gets a full Experience Value rating, CV bullets, and STAR story — "sold two follow-on projects" is legitimate CV material, don't downgrade it just because it lacks a technical build narrative.
 - Parent-engagement linking is opt-in per entry, not automatic — two case studies for the same client are only "related" if the user says so.
+- Always re-read the draft file before editing it in a later round — don't assume it still matches what you last wrote, the user can edit it between rounds.
+- Timeline dates matter more than they might seem: they're what lets the user reconstruct a full career lineage across every case study in the repo, so don't let vague relative time ("recently," "a while back") slide through unchallenged the way you might for other soft details.
