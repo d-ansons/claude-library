@@ -16,7 +16,7 @@
     {
       "name": "case-study",
       "source": "./plugins/case-study",
-      "description": "Builds a work project case study through an interview loop that drafts and updates a file live, probes for tool-specific depth, and fills a career timeline, ratings, CV bullet points, a STAR interview story with sample Q&A, and tags.",
+      "description": "Builds a work project case study through an interview loop that drafts a file live, tracks open questions in a Follow-up Questions checklist, probes for tool-specific depth, and fills a career timeline, ratings, CV bullet points, a STAR interview story with sample Q&A, and tags.",
       "category": "productivity",
       "tags": ["skill", "career", "writing", "cv", "interview-prep"]
     }

@@ -1,9 +1,14 @@
 # Output template
 
-Fill this structure exactly, per the drafting process in SKILL.md: write it on the first round with a `*(pending — <the actual open question>)*` placeholder for anything not yet known (never a bare `*(pending)*` — the file should carry the open question itself), then update it in place each round. `Tags` must include the type (`delivery` or `achievement`). `Parent Engagement` and `Related Case Studies` are omitted entirely (not left as empty placeholders) when the entry is standalone. `Interview Questions & Sample Answers` shows two Q&A pairs below but holds 2-4 — add or drop pairs to match how many genuinely fit, per SKILL.md. By the finished file, no `*(pending — ...)*` should remain — unanswered items become "Not specified" instead.
+Fill this structure exactly, per the drafting process in SKILL.md: write it on the first round with the **Follow-up Questions** section populated (your first 3-5 questions) and `*(pending — see Follow-up Questions)*` for any other section not yet known, then update both in place each round. `Tags` must include the type (`delivery` or `achievement`). `Parent Engagement` and `Related Case Studies` are omitted entirely (not left as empty placeholders) when the entry is standalone. `Interview Questions & Sample Answers` shows two Q&A pairs below but holds 2-4 — add or drop pairs to match how many genuinely fit, per SKILL.md. By the finished file, the Follow-up Questions section is deleted entirely and no `*(pending — ...)*` should remain — unanswered items become "Not specified" instead.
 
 ```markdown
 # <Project Name>
+
+## Follow-up Questions
+- [ ] **<Section>** — <the actual question>
+- [ ] **<Section>** — <the actual question>
+- [ ] **<Section>** — <the actual question>
 
 **Tags:** `<delivery|achievement>`, `<tag>`, `<tag>`
 **Parent Engagement:** <engagement/program name, or omit this line if standalone>

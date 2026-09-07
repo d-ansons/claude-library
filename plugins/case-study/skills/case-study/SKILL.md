@@ -1,5 +1,5 @@
 ---
-description: Turn rough notes about a work project or achievement (e.g. a delivered project, or a non-delivery win like selling follow-on work to a client) into a structured case study (timeline placing it in the user's career, context, outcome, an experience-value rating out of 10, key skills, CV bullet points each rated for CV relevance out of 10, a STAR-format interview story plus sample answers to likely interview questions, domain tags, and things to learn) via an interview loop that writes a draft file immediately and updates it after every round of targeted follow-up questions until the picture is solid. Probes for depth by asking about tool-specific decisions the user likely made but didn't mention (e.g. Import vs. DirectQuery for a Power BI report). Links related case studies under the same ongoing client engagement, and screens for confidential/sensitive details before finalizing. Use when the user wants to document a past project, an achievement like winning or expanding client work, build a case study entry, write up a project retrospective for a portfolio/CV repo, prep interview answers from past work, or says things like "let's write up this project" or "add a case study for X".
+description: Turn rough notes about a work project or achievement (e.g. a delivered project, or a non-delivery win like selling follow-on work to a client) into a structured case study (timeline placing it in the user's career, context, outcome, an experience-value rating out of 10, key skills, CV bullet points each rated for CV relevance out of 10, a STAR-format interview story plus sample answers to likely interview questions, domain tags, and things to learn) via an interview loop that writes a draft file immediately, tracks every open question in a Follow-up Questions checklist inside that file, and asks 3-5 questions at a time, iterating in small batches until the picture is solid. Probes for depth by asking about tool-specific decisions the user likely made but didn't mention (e.g. Import vs. DirectQuery for a Power BI report). Links related case studies under the same ongoing client engagement, and screens for confidential/sensitive details before finalizing. Use when the user wants to document a past project, an achievement like winning or expanding client work, build a case study entry, write up a project retrospective for a portfolio/CV repo, prep interview answers from past work, or says things like "let's write up this project" or "add a case study for X".
 ---
 
 # Case Study Builder
@@ -14,27 +14,37 @@ Build one case study per invocation by looping between the user's notes and targ
 
 3. **Check notes against the completeness checklist** for that type (below). Anything missing or vague is a gap.
 
-4. **Write the draft file now**, before asking anything, per Drafting As You Go below — filled with whatever is already known, clearly marked placeholders for the rest. Tell the user the file path.
+4. **Write the draft file now**, before asking anything, per Drafting As You Go below — filled with whatever is already known, plus a **Follow-up Questions** section (see Tracking Follow-up Questions below) listing your first 3-5 questions. Tell the user the file path.
 
-5. **Ask about gaps in one batched message**, not one question at a time. Group related questions together, be concrete about what's missing, and reference specifics the user already gave you rather than asking generically ("What was the impact?" is weak; "You mentioned the migration cut deploy time — do you have a rough before/after number, even approximate?" is strong). Include the parent-engagement, timeline, and depth-probing questions (below) in this same first round.
+5. **Ask 3-5 questions at a time, not a big dump.** Pick the 3-5 gaps that would unlock the most (usually type confirmation, core problem/actions/outcome, and timeline sequencing) and leave finer-grained or depth-probing questions for later rounds. Be concrete about what's missing and reference specifics the user already gave you rather than asking generically ("What was the impact?" is weak; "You mentioned the migration cut deploy time — do you have a rough before/after number, even approximate?" is strong). The questions in this message must match the unchecked items in the file's Follow-up Questions section.
 
-6. **Update the draft file with the new answers**, then re-check the checklist for what's still missing. Keep looping — ask, update the file, re-check — until every checklist item is either filled or explicitly marked as not applicable/not known by the user. Most case studies converge in 2-4 rounds — if you're still asking after that, you're probably over-interrogating; ask what's left in one final pass and move on with "Not specified" for anything still missing.
+6. **Update the draft file with the new answers** — fill in the real content, check off the resolved Follow-up Questions items, and add any newly discovered gaps (including depth-probing ones) as new unchecked items. Re-check the checklist for what's still missing, then ask the next batch of 3-5. Keep looping — ask, update, re-check — until every checklist item is either filled or explicitly marked as not applicable/not known by the user. Most case studies converge in 2-4 rounds — if you're still asking after that, you're probably over-interrogating; ask what's left in one final pass and move on with "Not specified" for anything still missing.
 
 7. **Never fabricate.** Do not invent metrics, outcomes, tools, team sizes, or timeframes the user hasn't stated. If something is missing after being asked, write "Not specified" in the file rather than guessing a plausible-sounding number or detail.
 
 8. **Before finishing, do one final check** covering sensitivity and tags together (see Confidentiality Screening and Tags below) — bundle both into the same message so this doesn't add an extra round on its own.
 
-9. **Complete the draft** — fill in the rating, CV bullets, STAR story, and interview Q&A (which need the full picture to be worth generating), replace any remaining placeholders with "Not specified", and update the file one last time. Apply the rating rubrics, CV bullet rules, and STAR guidance below.
+9. **Complete the draft** — fill in the rating, CV bullets, STAR story, and interview Q&A (which need the full picture to be worth generating), replace any remaining placeholders with "Not specified", delete the Follow-up Questions section entirely (it's scaffolding, not part of the finished case study), and update the file one last time. Apply the rating rubrics, CV bullet rules, and STAR guidance below.
 
 ## Drafting as you go
 
 The case study lives in a real file from the first round onward, not just in conversation — the user should be able to watch it fill in and can hand-edit it between rounds.
 
 - **Where to save it**: if the current directory (or a parent-engagement match you found) shows an existing case-studies location or naming convention, follow it. Otherwise create `<slug-of-project-name>.md` in the current directory and tell the user the path so they can redirect you if it's wrong.
-- **First write**: use [template.md](template.md)'s structure, filling every field you already know from the initial notes. For anything you don't know yet, don't write a bare `*(pending)*` — write the actual open question inline, e.g. `*(pending — Import or DirectQuery mode? any real data modeling/DAX?)*` or `*(pending — what was the measurable outcome?)*`. The file must carry every open question itself, including depth-probing ones, not just the chat — someone reading only the file should be able to tell what's still needed without scrolling up.
-- **Every round after that**: re-read the file first — the user may have edited it directly — then use Edit to update only the sections affected by the new answers, replacing each resolved `*(pending — ...)*` with the real content. Don't regenerate the whole file from scratch each round; that discards anything the user hand-edited.
+- **First write**: use [template.md](template.md)'s structure, filling every field you already know from the initial notes, plus the Follow-up Questions section (see below). For a section you don't know yet, write the short placeholder `*(pending — see Follow-up Questions)*` — the real question text lives in one place, not duplicated inline.
+- **Every round after that**: re-read the file first — the user may have edited it directly — then use Edit to update only the sections affected by the new answers, replacing each resolved placeholder with the real content. Don't regenerate the whole file from scratch each round; that discards anything the user hand-edited.
 - **Generated sections** (Experience Value, CV Bullet Points, Key Skills, Interview Story, Interview Questions & Sample Answers) stay `*(pending — needs the fuller picture from the rest of the case study)*` until step 9, since they need the full picture to be worth writing — don't half-generate them early and then rewrite them later.
 - **Finishing**: by the end, no `*(pending — ...)*` markers should remain — anything genuinely never answered becomes "Not specified" instead.
+
+## Tracking follow-up questions in the file
+
+Keep a **Follow-up Questions** section at the top of the draft file (right after the title) as the single running record of every open question — this is what lets the user read the file alone and see exactly what's outstanding, rather than piecing it together from chat history or scattered inline text.
+
+- Format each item as a checklist entry naming the section it belongs to: `- [ ] **<Section>** — <the actual question>`.
+- Whenever you send a batch of questions in chat, the file's unchecked items must match them exactly — write to the file first (or in the same turn), never leave the file behind what you just asked in chat.
+- When an answer comes in, fill in the real content in its section and check off (`- [x]`) the corresponding item — leave it checked rather than deleting it, so the file shows a visible record of what's been resolved this session.
+- If an answer surfaces a new gap (including a depth-probing follow-on), add it as a new unchecked item immediately, don't just hold it in memory for the next round.
+- Once the case study is complete (step 9), delete the whole section — it's drafting scaffolding, and the finished case study shouldn't carry it.
 
 ## Case study types
 
@@ -75,7 +85,7 @@ Guardrails:
 - Fold these into the same batched question round as everything else (see the main procedure) — this is not a separate round.
 - Cap it: 1-2 depth questions per tool actually named that seems likely to reveal something CV/skill-worthy, prioritizing the tool(s) most central to the project.
 - If the user says "I don't remember" or "that wasn't something I decided," drop it — this is meant to surface real depth, not test their memory.
-- These questions go in the draft file too, not just the chat message — write them into the relevant section's placeholder per Drafting As You Go (e.g. Tools & Technologies becomes `*(pending — Import or DirectQuery mode? any real data modeling/DAX?)*`), so the open question is visible to anyone who reads the file itself.
+- Depth questions are gaps like any other — add them as items in the Follow-up Questions section (per Tracking Follow-up Questions above) rather than only asking them in chat. They don't have to make the first batch of 3-5; it's fine for them to surface in a later round once the core facts are down.
 
 ## Timeline
 
@@ -160,3 +170,5 @@ This section shows the versatility of one piece of experience — the same story
 - Parent-engagement linking is opt-in per entry, not automatic — two case studies for the same client are only "related" if the user says so.
 - Always re-read the draft file before editing it in a later round — don't assume it still matches what you last wrote, the user can edit it between rounds.
 - Timeline is ordinal, not calendrical — resist the urge to ask for exact dates "just to be safe." A confirmed "2nd project in this role" is more useful and more reliably obtained than a guessed month.
+- Never ask a question in chat that isn't also sitting as an unchecked item in the file's Follow-up Questions section, and never leave a checked-off item whose section still says `*(pending)*` — the two are the same list, just rendered in two places.
+- Small batches beat one big dump: 3-5 questions per round keeps the user able to actually answer everything, even if it takes one or two more rounds than firing off every gap at once would.
