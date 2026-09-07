@@ -31,10 +31,10 @@ Build one case study per invocation by looping between the user's notes and targ
 The case study lives in a real file from the first round onward, not just in conversation — the user should be able to watch it fill in and can hand-edit it between rounds.
 
 - **Where to save it**: if the current directory (or a parent-engagement match you found) shows an existing case-studies location or naming convention, follow it. Otherwise create `<slug-of-project-name>.md` in the current directory and tell the user the path so they can redirect you if it's wrong.
-- **First write**: use [template.md](template.md)'s structure, filling every field you already know from the initial notes. For anything you don't know yet, write the literal placeholder `*(pending)*` — don't guess and don't leave the section heading empty.
-- **Every round after that**: re-read the file first — the user may have edited it directly — then use Edit to update only the sections affected by the new answers. Don't regenerate the whole file from scratch each round; that discards anything the user hand-edited.
-- **Generated sections** (Experience Value, CV Bullet Points, Key Skills, Interview Story, Interview Questions & Sample Answers) stay `*(pending)*` until step 9, since they need the full picture to be worth writing — don't half-generate them early and then rewrite them later.
-- **Finishing**: by the end, no `*(pending)*` markers should remain — anything genuinely never answered becomes "Not specified" instead.
+- **First write**: use [template.md](template.md)'s structure, filling every field you already know from the initial notes. For anything you don't know yet, don't write a bare `*(pending)*` — write the actual open question inline, e.g. `*(pending — Import or DirectQuery mode? any real data modeling/DAX?)*` or `*(pending — what was the measurable outcome?)*`. The file must carry every open question itself, including depth-probing ones, not just the chat — someone reading only the file should be able to tell what's still needed without scrolling up.
+- **Every round after that**: re-read the file first — the user may have edited it directly — then use Edit to update only the sections affected by the new answers, replacing each resolved `*(pending — ...)*` with the real content. Don't regenerate the whole file from scratch each round; that discards anything the user hand-edited.
+- **Generated sections** (Experience Value, CV Bullet Points, Key Skills, Interview Story, Interview Questions & Sample Answers) stay `*(pending — needs the fuller picture from the rest of the case study)*` until step 9, since they need the full picture to be worth writing — don't half-generate them early and then rewrite them later.
+- **Finishing**: by the end, no `*(pending — ...)*` markers should remain — anything genuinely never answered becomes "Not specified" instead.
 
 ## Case study types
 
@@ -50,7 +50,7 @@ The template shape is the same for both — Achievement entries just treat **Too
 A case study is ready to write once you can answer all of these from the conversation. Items marked (Delivery only) or (Achievement only) apply just to that type — everything else applies to both.
 
 - **Context**: what was the project/achievement, what was the user's role, and for what team or company (or "personal project" if not work-affiliated).
-- **Timeline**: concrete dates and where this sits in the user's career — see Timeline below.
+- **Timeline**: this project's ordinal position within its role, and that role's position among the user's other roles — see Timeline below.
 - **Parent engagement**: is this part of a larger ongoing client engagement or program that already has (or will have) other separate case studies, or is it standalone? See Parent Engagement & Related Case Studies below — don't assume linkage just because the client matches; confirm it.
 - **Problem/goal**: what was the project trying to achieve or what problem did it solve. (Delivery only)
 - **Actions**: what did the user actually do — decisions made, approach taken, not just "worked on X." (Delivery only)
@@ -75,14 +75,16 @@ Guardrails:
 - Fold these into the same batched question round as everything else (see the main procedure) — this is not a separate round.
 - Cap it: 1-2 depth questions per tool actually named that seems likely to reveal something CV/skill-worthy, prioritizing the tool(s) most central to the project.
 - If the user says "I don't remember" or "that wasn't something I decided," drop it — this is meant to surface real depth, not test their memory.
+- These questions go in the draft file too, not just the chat message — write them into the relevant section's placeholder per Drafting As You Go (e.g. Tools & Technologies becomes `*(pending — Import or DirectQuery mode? any real data modeling/DAX?)*`), so the open question is visible to anyone who reads the file itself.
 
 ## Timeline
 
-Each case study should be placeable on a single lineage across the user's whole career, so ask for calendar precision here even though you'd accept looser answers elsewhere.
+Each case study should be placeable on a single lineage across the user's whole career — but the goal is relative ordering, not calendar precision. Don't push for exact months/dates; they're brittle to remember and not actually needed. Instead capture two ordinals that, once every case study has them, let the whole career be reconstructed by daisy-chaining: which project within the role, and which role within the career.
 
-- **Dates**: get at least month/year for when the project started and ended (or "Ongoing"). "A few months ago" or "last year" isn't enough — push once for the actual month/year, but accept an approximate one ("early 2023, not sure of the exact month") rather than blocking on it.
-- **Role at the time**: the job title and employer the user held when this happened — this may repeat what's in Context, that's fine, Timeline needs to stand on its own.
-- **Sequence note** (optional but valuable): how this fits relative to other career milestones the user mentions — e.g. "6 months into this role, 2 months before promotion to Senior," or "second project in the Acme engagement, after the platform migration." Only include this if the user actually says something placing it in sequence; don't invent a position.
+- **Role**: the job title and employer the user held when this happened — this may repeat what's in Context, that's fine, Timeline needs to stand on its own.
+- **Project sequence**: this project's position among the user's other case studies for the same role — e.g. "2nd project in this role." Search the current working directory for other case study files with the same Role and count them; propose the next number and let the user confirm or correct it, since the order you find files in may not match chronological order.
+- **Role sequence**: where this role sits relative to the user's other roles — this doesn't need to be an exact number either; a relative descriptor is enough: "current role," "the role before this one," "2 roles before my current one." Ask once; if the user doesn't know or care, write "Not specified" rather than pushing.
+- A rough real-world period (e.g. "early 2023," "senior year of this role") is a welcome bonus if the user happens to mention one, but never require or chase it — the ordinals above are what actually does the sequencing work.
 
 ## Parent engagement & related case studies
 
@@ -157,4 +159,4 @@ This section shows the versatility of one piece of experience — the same story
 - An Achievement entry still gets a full Experience Value rating, CV bullets, and STAR story — "sold two follow-on projects" is legitimate CV material, don't downgrade it just because it lacks a technical build narrative.
 - Parent-engagement linking is opt-in per entry, not automatic — two case studies for the same client are only "related" if the user says so.
 - Always re-read the draft file before editing it in a later round — don't assume it still matches what you last wrote, the user can edit it between rounds.
-- Timeline dates matter more than they might seem: they're what lets the user reconstruct a full career lineage across every case study in the repo, so don't let vague relative time ("recently," "a while back") slide through unchallenged the way you might for other soft details.
+- Timeline is ordinal, not calendrical — resist the urge to ask for exact dates "just to be safe." A confirmed "2nd project in this role" is more useful and more reliably obtained than a guessed month.

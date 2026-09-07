@@ -1,6 +1,6 @@
 # Output template
 
-Fill this structure exactly, per the drafting process in SKILL.md: write it on the first round with `*(pending)*` for anything not yet known, then update it in place each round. `Tags` must include the type (`delivery` or `achievement`). `Parent Engagement` and `Related Case Studies` are omitted entirely (not left as empty placeholders) when the entry is standalone. `Interview Questions & Sample Answers` shows two Q&A pairs below but holds 2-4 — add or drop pairs to match how many genuinely fit, per SKILL.md. By the finished file, no `*(pending)*` should remain — unanswered items become "Not specified" instead.
+Fill this structure exactly, per the drafting process in SKILL.md: write it on the first round with a `*(pending — <the actual open question>)*` placeholder for anything not yet known (never a bare `*(pending)*` — the file should carry the open question itself), then update it in place each round. `Tags` must include the type (`delivery` or `achievement`). `Parent Engagement` and `Related Case Studies` are omitted entirely (not left as empty placeholders) when the entry is standalone. `Interview Questions & Sample Answers` shows two Q&A pairs below but holds 2-4 — add or drop pairs to match how many genuinely fit, per SKILL.md. By the finished file, no `*(pending — ...)*` should remain — unanswered items become "Not specified" instead.
 
 ```markdown
 # <Project Name>
@@ -10,9 +10,10 @@ Fill this structure exactly, per the drafting process in SKILL.md: write it on t
 **Related Case Studies:** <relative links to other case studies under the same engagement, or omit this line if none>
 
 ## Timeline
-- **Dates:** <Month YYYY> – <Month YYYY, or "Ongoing">
-- **Role at the time:** <job title @ employer>
-- **Sequence note:** <where this sits relative to other career milestones, or omit this line if not stated>
+- **Role:** <job title @ employer>
+- **Project sequence:** <e.g. "2nd project in this role">
+- **Role sequence:** <e.g. "current role", "the role before this one", or "Not specified">
+- **Rough period:** <e.g. "early 2023", only if the user mentioned one — omit this line otherwise>
 
 ## Context
 - **Role / team / company:** <role, team, company, or "Personal project">
