@@ -1,5 +1,5 @@
 ---
-description: Turn rough notes about a work project or achievement (e.g. a delivered project, or a non-delivery win like selling follow-on work to a client) into a structured case study (timeline placing it in the user's career, context, outcome, an experience-value rating out of 10, key skills, CV bullet points each rated for CV relevance out of 10, a STAR-format interview story plus sample answers to likely interview questions, domain tags, and things to learn) via an interview loop that writes a draft file immediately, tracks every open question in a Follow-up Questions checklist inside that file, and asks 3-5 questions at a time, iterating in small batches until the picture is solid. Probes for depth by asking about tool-specific decisions the user likely made but didn't mention (e.g. Import vs. DirectQuery for a Power BI report). Links related case studies under the same ongoing client engagement, and screens for confidential/sensitive details before finalizing. Use when the user wants to document a past project, an achievement like winning or expanding client work, build a case study entry, write up a project retrospective for a portfolio/CV repo, prep interview answers from past work, or says things like "let's write up this project" or "add a case study for X".
+description: Turn rough notes about a work project or achievement (e.g. a delivered project, or a non-delivery win like selling follow-on work to a client) into a structured case study (timeline placing it in the user's career, context, outcome, a reflection on what they'd do differently and where they deviated from best practice, an experience-value rating out of 10, key skills, CV bullet points each rated for CV relevance out of 10, a STAR-format interview story plus sample answers to likely interview questions, domain tags, and things to learn) via an interview loop that writes a draft file immediately, tracks every open question in a Follow-up Questions checklist inside that file, and asks 3-5 questions at a time, iterating in small batches until the picture is solid. Probes for depth by asking about tool-specific decisions the user likely made but didn't mention (e.g. Import vs. DirectQuery for a Power BI report). Links related case studies under the same ongoing client engagement, and screens for confidential/sensitive details before finalizing. Use when the user wants to document a past project, an achievement like winning or expanding client work, build a case study entry, write up a project retrospective for a portfolio/CV repo, prep interview answers from past work, or says things like "let's write up this project" or "add a case study for X".
 ---
 
 # Case Study Builder
@@ -69,6 +69,7 @@ A case study is ready to write once you can answer all of these from the convers
 - **Outcome**: what happened as a result — ideally a number or concrete change (revenue/scope for an Achievement), but a qualitative outcome is acceptable if the user has no metric.
 - **Challenges**: at least one non-trivial obstacle and how it was handled. This is usually the richest source of skills and CV material — dig for it if the notes don't mention one. (Optional for Achievement entries if none applies.)
 - **Depth**: for every specific tool/technology named, at least one likely-but-unmentioned decision or detail has been asked about — see Probing for Depth below. (Delivery only)
+- **Reflection**: what the user would do differently in hindsight, and any point where they deviated from best practice/the ideal approach and why — see Reflection below.
 
 ## Probing for depth
 
@@ -86,6 +87,18 @@ Guardrails:
 - Cap it: 1-2 depth questions per tool actually named that seems likely to reveal something CV/skill-worthy, prioritizing the tool(s) most central to the project.
 - If the user says "I don't remember" or "that wasn't something I decided," drop it — this is meant to surface real depth, not test their memory.
 - Depth questions are gaps like any other — add them as items in the Follow-up Questions section (per Tracking Follow-up Questions above) rather than only asking them in chat. They don't have to make the first batch of 3-5; it's fine for them to surface in a later round once the core facts are down.
+
+## Reflection
+
+This is honest hindsight, not a lessons-learned platitude — and it's what turns a case study into a real interview answer for "tell me about a mistake" or "what would you do differently," which the rest of the case study can't answer on its own. Ask two things, for both Delivery and Achievement entries:
+
+- **What I'd do differently**: with hindsight, what would the user change about their approach — a different tool, a different sequencing, involving someone earlier, scoping it differently?
+- **Deviations from best practice**: was there a point where they knowingly cut a corner, skipped a step a textbook version of this would include, or took on technical/process debt — and why: a deliberate tradeoff under a real constraint (time, budget, unclear requirements), or a gap in their knowledge at the time? Naming the "why" is what makes this read as judgment rather than a confession.
+
+Guardrails:
+- If the user says "nothing, it went great," push back once — genuinely zero hindsight adjustments is rare even for successful projects — but accept it at face value if they insist after that; don't badger.
+- This is not the same question as Challenges (an obstacle encountered mid-project) or Things to Learn (tools/concepts to follow up on) — don't let the answer to one silently stand in for the others.
+- A deviation driven by a real constraint is a legitimate, even CV-worthy, engineering trade-off — write it that way, not as an admission of failure.
 
 ## Timeline
 
@@ -155,7 +168,7 @@ This section turns the case study into something the user can recite in a behavi
 
 This section shows the versatility of one piece of experience — the same story can answer several different interview questions, each with a different emphasis. Derive everything here from facts already gathered (including the STAR story) — don't ask new questions and don't invent details to make an answer sound punchier.
 
-- Pick 2-4 real interview questions this specific experience would genuinely answer well, matched to what's actually strong in the story. Draw from categories like: a technical/business challenge overcome, influencing without authority or cross-team disagreement, a project the user is proud of, learning something quickly, identifying an opportunity (natural fit for an Achievement entry), or a decision made with incomplete information.
+- Pick 2-4 real interview questions this specific experience would genuinely answer well, matched to what's actually strong in the story. Draw from categories like: a technical/business challenge overcome, influencing without authority or cross-team disagreement, a project the user is proud of, learning something quickly, identifying an opportunity (natural fit for an Achievement entry), a decision made with incomplete information, or a mistake/what-you'd-do-differently (draw this one straight from Reflection).
 - Don't force categories that don't fit — a purely technical delivery with no people-friction shouldn't get an "handling conflict" question just to fill a slot.
 - For each question, write a sample answer that reframes the same underlying facts with the emphasis that question is actually probing — don't paste the same STAR block verbatim under every question.
 - Keep each answer compressed and spoken-style, first person, roughly 80-120 words.
@@ -172,3 +185,4 @@ This section shows the versatility of one piece of experience — the same story
 - Timeline is ordinal, not calendrical — resist the urge to ask for exact dates "just to be safe." A confirmed "2nd project in this role" is more useful and more reliably obtained than a guessed month.
 - Never ask a question in chat that isn't also sitting as an unchecked item in the file's Follow-up Questions section, and never leave a checked-off item whose section still says `*(pending)*` — the two are the same list, just rendered in two places.
 - Small batches beat one big dump: 3-5 questions per round keeps the user able to actually answer everything, even if it takes one or two more rounds than firing off every gap at once would.
+- Reflection is not optional flavor text — a case study without it can't support a "tell me about a mistake" or "what would you do differently" interview answer, which is one of the most commonly asked behavioral question types.

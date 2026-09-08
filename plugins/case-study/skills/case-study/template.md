@@ -36,6 +36,10 @@ Fill this structure exactly, per the drafting process in SKILL.md: write it on t
 ## Outcome
 <what happened as a result — quantified if possible, otherwise a concrete qualitative result. Include how a key challenge was handled if relevant.>
 
+## Reflection
+**What I'd do differently:** <1-2 sentences>
+**Deviations from best practice:** <what was cut/skipped/traded off and why — a deliberate constraint-driven trade-off, or a knowledge gap at the time — or "None identified">
+
 ## Experience Value: <X>/10
 <1-2 sentences justifying the rating against the rubric>
 
