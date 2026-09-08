@@ -69,7 +69,7 @@ A case study is ready to write once you can answer all of these from the convers
 - **Outcome**: what happened as a result — ideally a number or concrete change (revenue/scope for an Achievement), but a qualitative outcome is acceptable if the user has no metric.
 - **Challenges**: at least one non-trivial obstacle and how it was handled. This is usually the richest source of skills and CV material — dig for it if the notes don't mention one. (Optional for Achievement entries if none applies.)
 - **Depth**: for every specific tool/technology named, at least one likely-but-unmentioned decision or detail has been asked about — see Probing for Depth below. (Delivery only)
-- **Reflection**: what the user would do differently in hindsight, and any point where they deviated from best practice/the ideal approach and why — see Reflection below.
+- **Reflection**: a specific decision already on record, questioned against its plausible alternative (not a generic "what would you do differently"), plus any point where they deviated from best practice and why — see Reflection below.
 
 ## Probing for depth
 
@@ -87,16 +87,20 @@ Guardrails:
 - Cap it: 1-2 depth questions per tool actually named that seems likely to reveal something CV/skill-worthy, prioritizing the tool(s) most central to the project.
 - If the user says "I don't remember" or "that wasn't something I decided," drop it — this is meant to surface real depth, not test their memory.
 - Depth questions are gaps like any other — add them as items in the Follow-up Questions section (per Tracking Follow-up Questions above) rather than only asking them in chat. They don't have to make the first batch of 3-5; it's fine for them to surface in a later round once the core facts are down.
+- Once a depth question is answered, it becomes raw material for Reflection below — the specific choice you just learned (e.g. "used Import mode") is exactly what a good Reflection question interrogates against its alternative.
 
 ## Reflection
 
-This is honest hindsight, not a lessons-learned platitude — and it's what turns a case study into a real interview answer for "tell me about a mistake" or "what would you do differently," which the rest of the case study can't answer on its own. Ask two things, for both Delivery and Achievement entries:
+A generic "what would you do differently?" gets a generic, forgettable answer. Instead, use the same practitioner reasoning as Probing for Depth, aimed backward: look at the specific choices already on record (including whatever Probing for Depth just surfaced) and find one where a plausible alternative existed. Ask about that alternative by name and why they didn't take it — not whether they have vague regrets.
 
-- **What I'd do differently**: with hindsight, what would the user change about their approach — a different tool, a different sequencing, involving someone earlier, scoping it differently?
-- **Deviations from best practice**: was there a point where they knowingly cut a corner, skipped a step a textbook version of this would include, or took on technical/process debt — and why: a deliberate tradeoff under a real constraint (time, budget, unclear requirements), or a gap in their knowledge at the time? Naming the "why" is what makes this read as judgment rather than a confession.
+- **Pattern**: "You used `<choice>`. `<Alternative>` would have `<specific concrete advantage>` — why `<choice>` over `<alternative>` here?" e.g. "You used Import mode — DirectQuery would have kept the data live without a scheduled refresh. Why Import over DirectQuery here?" The answer might be a deliberate trade-off ("refresh latency was fine and Import performs better"), a knowledge gap at the time ("didn't know DirectQuery was viable"), or a reason the alternative doesn't reveal ("DirectQuery wouldn't have worked because the source was a flat file") — all three are valid and worth capturing.
+- **Timing**: this question depends on already knowing the specific choice, so it naturally follows a Probing for Depth answer rather than being asked cold in round one — it's fine, expected even, for Reflection questions to surface a round after the depth question that fed them.
+- **Fallback**: only ask the generic "what would you do differently, and was there a known corner cut" version if nothing in the notes yet offers a concrete alternative to name — never let the fallback become the default because naming an alternative takes more thought.
+- Still separately ask about deviations from best practice (corners knowingly cut, technical/process debt taken on, and why) if the specific-choice question above doesn't surface one on its own.
+- Like every other gap, a Reflection question is a Follow-up Questions item first — write it into the file (`- [ ] **Reflection** — <the specific choice-vs-alternative question>`) at the same time you ask it in chat, per Tracking Follow-up Questions above. Never ask a Reflection question only in chat and leave the Reflection section's placeholder generic or blank — the file must carry the exact question, same as any depth-probing one.
 
 Guardrails:
-- If the user says "nothing, it went great," push back once — genuinely zero hindsight adjustments is rare even for successful projects — but accept it at face value if they insist after that; don't badger.
+- If the user says "nothing, it went great," push back once with a specific alternative if you can name one — but accept it at face value after that; don't badger.
 - This is not the same question as Challenges (an obstacle encountered mid-project) or Things to Learn (tools/concepts to follow up on) — don't let the answer to one silently stand in for the others.
 - A deviation driven by a real constraint is a legitimate, even CV-worthy, engineering trade-off — write it that way, not as an admission of failure.
 
@@ -186,3 +190,5 @@ This section shows the versatility of one piece of experience — the same story
 - Never ask a question in chat that isn't also sitting as an unchecked item in the file's Follow-up Questions section, and never leave a checked-off item whose section still says `*(pending)*` — the two are the same list, just rendered in two places.
 - Small batches beat one big dump: 3-5 questions per round keeps the user able to actually answer everything, even if it takes one or two more rounds than firing off every gap at once would.
 - Reflection is not optional flavor text — a case study without it can't support a "tell me about a mistake" or "what would you do differently" interview answer, which is one of the most commonly asked behavioral question types.
+- A Reflection question that doesn't name a specific choice and alternative is doing it wrong — "what would you do differently?" is the fallback of last resort, not the default.
+- The "chat and file must match" rule above applies to Reflection questions specifically, not just the obvious core-fact ones — it's easy to compose a sharp Reflection question in the chat message and forget to also write it into the file's Follow-up Questions / Reflection placeholder.

@@ -6,7 +6,7 @@ Give it rough notes about a project or achievement (a delivery, or a non-deliver
 
 - A **Timeline** (this project's position within its role, and that role's position among the user's other roles) so entries can be strung into a full career lineage without needing exact dates
 - Tags (including type — delivery/achievement), parent engagement links, context, what was done, tools used, and outcome
-- A **Reflection**: what the user would do differently in hindsight, and any deviation from best practice and why — the source material for "tell me about a mistake" interview answers
+- A **Reflection**: questions a specific choice already on record against its plausible alternative by name (e.g. "you used Import mode — DirectQuery would've kept data live, why Import here?") rather than asking a generic "what would you do differently," plus any deviation from best practice and why — the source material for "tell me about a mistake" interview answers
 - **Experience Value** rating out of 10 (rubric-based, comparable across case studies)
 - **Key Skills Covered**
 - **CV Bullet Points**, each with a **CV Relevance** rating out of 10
