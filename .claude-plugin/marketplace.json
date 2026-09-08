@@ -2,8 +2,7 @@
   "$schema": "https://json.schemastore.org/claude-code-plugin-marketplace.json",
   "name": "claude-library",
   "owner": {
-    "name": "Davis Ansons",
-    "email": "davis.ansons@outlook.com"
+    "name": "Davis Ansons"
   },
   "plugins": [
     {
